@@ -1,4 +1,4 @@
-const body = document.querySelector("body");
+
 const container = document.querySelector(".container");
 const colorText = document.querySelector(".color-text");
 
@@ -34,14 +34,13 @@ function setGradient() {
   const color1 = getGradient();
   const color2 = getGradient();
   const randomDeg = Math.floor(Math.random() * 360);
-  const backColor = `linear gradient(${randomDeg}deg, ${color1}, ${color2})`;
+  const backColor = `linear-gradient(${randomDeg}deg, ${color1}, ${color2})`;
 
-  body.style.backgroundImage = backColor;
-  colorText.textContent = backColor;
+  document.body.style.background = backColor;
+  colorText.innerHTML = backColor;
 }
 
 setGradient();
 
 container.addEventListener("click", setGradient);
 
-body.style.backgroundColor = 'yellow';
